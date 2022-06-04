@@ -1,9 +1,9 @@
-import { ThirdwebSDK } from "@thirdweb-dev/sdk";
-import dotenv from "dotenv";
+const ThirdwebSDK = require("@thirdweb-dev/sdk").ThirdwebSDK;
+const dotenv = require("dotenv");
 
 dotenv.config();
 
-export const sdk = ThirdwebSDK.fromPrivateKey(
+const sdk = ThirdwebSDK.fromPrivateKey(
   process.env.PRIVATE_KEY,
   process.env.NETWORK
 );
@@ -17,3 +17,5 @@ export const sdk = ThirdwebSDK.fromPrivateKey(
     process.exit(1);
   }
 })();
+
+module.exports = sdk;

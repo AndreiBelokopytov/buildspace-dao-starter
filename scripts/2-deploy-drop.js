@@ -1,12 +1,9 @@
-import { ContractDeployer } from "@thirdweb-dev/sdk";
-import { readFileSync } from "fs";
-import { sdk } from "./1-initialize-sdk";
-
-const deployer = new ContractDeployer(process.env.NETWORK);
+const { readFileSync } = require("fs");
+const sdk = require("./1-initialize-sdk.js");
 
 (async () => {
   try {
-    const editionDropAddress = await deployer.deployTokenDrop({
+    const editionDropAddress = await sdk.deployer.deployTokenDrop({
       name: "FogelDAO membership",
       description: "A DAO for Fogel club members",
       image: readFileSync("scripts/assets/russian_flag.png"),
