@@ -3,7 +3,7 @@ const sdk = require("./1-initialize-sdk.js");
 
 (async () => {
   try {
-    const editionDropAddress = await sdk.deployer.deployTokenDrop({
+    const editionDropAddress = await sdk.deployer.deployEditionDrop({
       name: "FogelDAO membership",
       description: "A DAO for Fogel club members",
       image: readFileSync("scripts/assets/russian_flag.png"),
